@@ -3,7 +3,7 @@ Description=pen_rotate daemon
 After=multi-user.target
 
 [Service]
-ExecStart=/usr/sbin/penrota
+ExecStart=/usr/sbin/penrotate
 Restart=always
 
 [Install]
