@@ -1,0 +1,10 @@
+[Unit]
+Description=pen_rotate daemon
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/sbin/penrota
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
