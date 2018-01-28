@@ -5,6 +5,7 @@ when the screen rotate.
 
 ## Daemonize it
 
+WORK IN PROGRESS
 For daemonized it, please follow this instruction :
 
 1 - create a directory in opt named /opt/penrotate
@@ -23,15 +24,6 @@ For daemonized it, please follow this instruction :
 
 `chmod +x /usr/sbin/penrotate`
 
-5 - cp systemd script in /lib/systemd/system
-
-`cp penrotate.service /lib/systemd/system`
-
-6 - reload systemd
-
-`systemctl daemon-reload`
-
-7 - Auto start it :
-
-`systemctl enable penrotate.service`
+5 - set suid bit :
+`chmod u+s /usr/sbin/penrotate`
 
