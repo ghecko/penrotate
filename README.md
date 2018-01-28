@@ -1,4 +1,4 @@
-#Pen Rotate
+# Pen Rotate
 
 This simple script is used to rotate the matrice for pen like asus pen
 when the screen rotate.
