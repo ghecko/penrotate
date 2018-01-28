@@ -11,7 +11,7 @@ For daemonized it, please follow this instruction :
 
 `mkdir /opt/penrotate`
 
-2 - cp pen_rotate.py in /opt/penrotate
+2 - copy pen_rotate.py in /opt/penrotate
 
 `cp pen_rotate.py /opt/penrotate/`
 
@@ -24,7 +24,9 @@ For daemonized it, please follow this instruction :
 `chmod +x /usr/sbin/penrotate`
 
 5 - set suid bit (enable to start penrotate with root right):
+
 `chmod u+s /usr/sbin/penrotate`
 
 6 - To start it with your gnome session, add this to ~/.xprofile :
+
 `penrotate &`
