@@ -5,7 +5,6 @@ when the screen rotate.
 
 ## Daemonize it
 
-WORK IN PROGRESS
 For daemonized it, please follow this instruction :
 
 1 - create a directory in opt named /opt/penrotate
