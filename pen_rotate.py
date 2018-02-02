@@ -24,34 +24,34 @@ def handle_change(namespace, options, _):
 
 
 def rotate(orientation):
-    pen_cmd = "xinput list | grep 'Pen Pen' | awk '{match($0, /id=([0-9]*)/, arr); if(arr[1] != \"\") print arr[1]}'"
-    tpad_cmd = "xinput list | grep 'Touchpad' | awk '{match($0, /id=([0-9]*)/, arr); if(arr[1] != \"\") print arr[1]}'"
+    pen_cmd = "/usr/bin/xinput list | grep 'Pen Pen' | awk '{match($0, /id=([0-9]*)/, arr); if(arr[1] != \"\") print arr[1]}'"
+    tpad_cmd = "/usr/bin/xinput list | grep 'Touchpad' | awk '{match($0, /id=([0-9]*)/, arr); if(arr[1] != \"\") print arr[1]}'"
     pen_id = subprocess.check_output(pen_cmd, shell=True).decode('utf-8').strip()
     touchpad_id = subprocess.check_output(tpad_cmd, shell=True).decode('utf-8').strip()
     if orientation == "normal":
         time.sleep(2)
         if pen_id != "":
-            os.system("xinput set-prop {} 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1".format(pen_id))
+            os.system("/usr/bin/xinput set-prop {} 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1".format(pen_id))
         if touchpad_id != "":
-            os.system("xinput set-prop {} 'Device Enabled' 1".format(touchpad_id))
+            os.system("/usr/bin/xinput set-prop {} 'Device Enabled' 1".format(touchpad_id))
     elif orientation == "right-up":
         time.sleep(2)
         if pen_id != "":
-            os.system("xinput set-prop {} 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1".format(pen_id))
+            os.system("/usr/bin/xinput set-prop {} 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1".format(pen_id))
         if touchpad_id != "":
-            os.system("xinput set-prop {} 'Device Enabled' 0".format(touchpad_id))
+            os.system("/usr/bin/xinput set-prop {} 'Device Enabled' 0".format(touchpad_id))
     elif orientation == "left-up":
         time.sleep(2)
         if pen_id != "":
-            os.system("xinput set-prop {} 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1".format(pen_id))
+            os.system("/usr/bin/xinput set-prop {} 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1".format(pen_id))
         if touchpad_id != "":
-            os.system("xinput set-prop {} 'Device Enabled' 0".format(touchpad_id))
+            os.system("/usr/bin/xinput set-prop {} 'Device Enabled' 0".format(touchpad_id))
     elif orientation == "bottom-up":
         time.sleep(2)
         if pen_id != "":
-            os.system("xinput set-prop {} 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1".format(pen_id))
+            os.system("/usr/bin/xinput set-prop {} 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1".format(pen_id))
         if touchpad_id != "":
-            os.system("xinput set-prop {} 'Device Enabled' 0".format(touchpad_id))
+            os.system("/usr/bin/xinput set-prop {} 'Device Enabled' 0".format(touchpad_id))
 
 
 if __name__ == "__main__":
